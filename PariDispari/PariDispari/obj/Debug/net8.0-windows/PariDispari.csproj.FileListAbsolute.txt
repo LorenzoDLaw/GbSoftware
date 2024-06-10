@@ -1,0 +1,16 @@
+C:\ProgettiLS\PariDispari\PariDispari\bin\Debug\net8.0-windows\PariDispari.exe
+C:\ProgettiLS\PariDispari\PariDispari\bin\Debug\net8.0-windows\PariDispari.deps.json
+C:\ProgettiLS\PariDispari\PariDispari\bin\Debug\net8.0-windows\PariDispari.runtimeconfig.json
+C:\ProgettiLS\PariDispari\PariDispari\bin\Debug\net8.0-windows\PariDispari.dll
+C:\ProgettiLS\PariDispari\PariDispari\bin\Debug\net8.0-windows\PariDispari.pdb
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.Form1.resources
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.csproj.GenerateResource.cache
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.AssemblyInfoInputs.cache
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.AssemblyInfo.cs
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.csproj.CoreCompileInputs.cache
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.dll
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\refint\PariDispari.dll
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.pdb
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\PariDispari.genruntimeconfig.cache
+C:\ProgettiLS\PariDispari\PariDispari\obj\Debug\net8.0-windows\ref\PariDispari.dll

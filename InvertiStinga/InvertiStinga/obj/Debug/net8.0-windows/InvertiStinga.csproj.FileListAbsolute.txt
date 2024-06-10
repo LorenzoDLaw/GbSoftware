@@ -1,0 +1,16 @@
+C:\ProgettiLS\InvertiStinga\InvertiStinga\bin\Debug\net8.0-windows\InvertiStinga.exe
+C:\ProgettiLS\InvertiStinga\InvertiStinga\bin\Debug\net8.0-windows\InvertiStinga.deps.json
+C:\ProgettiLS\InvertiStinga\InvertiStinga\bin\Debug\net8.0-windows\InvertiStinga.runtimeconfig.json
+C:\ProgettiLS\InvertiStinga\InvertiStinga\bin\Debug\net8.0-windows\InvertiStinga.dll
+C:\ProgettiLS\InvertiStinga\InvertiStinga\bin\Debug\net8.0-windows\InvertiStinga.pdb
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.Form1.resources
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.csproj.GenerateResource.cache
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.AssemblyInfoInputs.cache
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.AssemblyInfo.cs
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.csproj.CoreCompileInputs.cache
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.dll
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\refint\InvertiStinga.dll
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.pdb
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\InvertiStinga.genruntimeconfig.cache
+C:\ProgettiLS\InvertiStinga\InvertiStinga\obj\Debug\net8.0-windows\ref\InvertiStinga.dll
