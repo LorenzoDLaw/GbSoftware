@@ -64,7 +64,7 @@
             btnKey1.TabIndex = 1;
             btnKey1.Text = "1";
             btnKey1.UseVisualStyleBackColor = true;
-            btnKey1.Click += btnKey1_Click;
+            btnKey1.Click += btnGetValue;
             // 
             // btnKey3
             // 
@@ -74,7 +74,7 @@
             btnKey3.TabIndex = 2;
             btnKey3.Text = "3";
             btnKey3.UseVisualStyleBackColor = true;
-            btnKey3.Click += btnKey3_Click;
+            btnKey3.Click += btnGetValue;
             // 
             // btnKey2
             // 
@@ -84,7 +84,7 @@
             btnKey2.TabIndex = 3;
             btnKey2.Text = "2";
             btnKey2.UseVisualStyleBackColor = true;
-            btnKey2.Click += btnKey2_Click;
+            btnKey2.Click += btnGetValue;
             // 
             // btnKey4
             // 
@@ -94,7 +94,7 @@
             btnKey4.TabIndex = 4;
             btnKey4.Text = "4";
             btnKey4.UseVisualStyleBackColor = true;
-            btnKey4.Click += btnKey4_Click;
+            btnKey4.Click += btnGetValue;
             // 
             // btnKey5
             // 
@@ -104,7 +104,7 @@
             btnKey5.TabIndex = 5;
             btnKey5.Text = "5";
             btnKey5.UseVisualStyleBackColor = true;
-            btnKey5.Click += btnKey5_Click;
+            btnKey5.Click += btnGetValue;
             // 
             // btnKey6
             // 
@@ -114,7 +114,7 @@
             btnKey6.TabIndex = 6;
             btnKey6.Text = "6";
             btnKey6.UseVisualStyleBackColor = true;
-            btnKey6.Click += btnKey6_Click;
+            btnKey6.Click += btnGetValue;
             // 
             // btnKey7
             // 
@@ -124,7 +124,7 @@
             btnKey7.TabIndex = 7;
             btnKey7.Text = "7";
             btnKey7.UseVisualStyleBackColor = true;
-            btnKey7.Click += btnKey7_Click;
+            btnKey7.Click += btnGetValue;
             // 
             // btnKey8
             // 
@@ -134,7 +134,7 @@
             btnKey8.TabIndex = 8;
             btnKey8.Text = "8";
             btnKey8.UseVisualStyleBackColor = true;
-            btnKey8.Click += btnKey8_Click;
+            btnKey8.Click += btnGetValue;
             // 
             // btnKey9
             // 
@@ -144,7 +144,7 @@
             btnKey9.TabIndex = 9;
             btnKey9.Text = "9";
             btnKey9.UseVisualStyleBackColor = true;
-            btnKey9.Click += btnKey9_Click;
+            btnKey9.Click += btnGetValue;
             // 
             // btnKey0
             // 
@@ -154,7 +154,7 @@
             btnKey0.TabIndex = 10;
             btnKey0.Text = "0";
             btnKey0.UseVisualStyleBackColor = true;
-            btnKey0.Click += btnKey0_Click;
+            btnKey0.Click += btnGetValue;
             // 
             // btnKeyPiu
             // 
@@ -164,7 +164,7 @@
             btnKeyPiu.TabIndex = 11;
             btnKeyPiu.Text = "+";
             btnKeyPiu.UseVisualStyleBackColor = true;
-            btnKeyPiu.Click += btnKeyPiu_Click;
+            btnKeyPiu.Click += btnKeyOperatore;
             // 
             // btnKeyMeno
             // 
@@ -174,7 +174,7 @@
             btnKeyMeno.TabIndex = 12;
             btnKeyMeno.Text = "-";
             btnKeyMeno.UseVisualStyleBackColor = true;
-            btnKeyMeno.Click += btnKeyMeno_Click;
+            btnKeyMeno.Click += btnKeyOperatore;
             // 
             // btnKeyPer
             // 
@@ -184,7 +184,7 @@
             btnKeyPer.TabIndex = 13;
             btnKeyPer.Text = "x";
             btnKeyPer.UseVisualStyleBackColor = true;
-            btnKeyPer.Click += btnKeyPer_Click;
+            btnKeyPer.Click += btnKeyOperatore;
             // 
             // btnKeyDiviso
             // 
@@ -194,7 +194,7 @@
             btnKeyDiviso.TabIndex = 14;
             btnKeyDiviso.Text = "/";
             btnKeyDiviso.UseVisualStyleBackColor = true;
-            btnKeyDiviso.Click += btnKeyDiviso_Click;
+            btnKeyDiviso.Click += btnKeyOperatore;
             // 
             // btnKeyEqual
             // 

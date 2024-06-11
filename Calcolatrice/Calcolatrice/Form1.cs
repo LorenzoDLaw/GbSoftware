@@ -1,349 +1,213 @@
 using System;
 using System.Configuration;
 using System.Reflection.Metadata.Ecma335;
+using System.Windows.Forms;
 
 namespace Calcolatrice
 {
     public partial class Form1 : Form
     {
+        public string ScreenInput { get; set; }
+        public string FirstInput { get; set; }
+        public double num1 { get; set; }
+        public double num2 { get; set; }
+
+        double calcolo = 0;
+
+        private EnumOperazioni _operazioneCorrente;
+            
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        public string ScreenInput { get; set; }
-        public string firstInput { get; set; }
-        public string secodInput { get; set; }
-
-        double calcolo = 0;
-
-        bool boolRisultato = false;
-        private EnumOperazioni _operazioneCorrente;
-
-        private void btnKey1_Click(object sender, EventArgs e)
+        private void btnGetValue(object sender, EventArgs e)
         {
-            if (boolRisultato)
+            if (sender is Button)
             {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            
-            lblCalcScreen.Text = lblCalcScreen.Text + "1";
-            ScreenInput = ScreenInput + "1";
-        }
-
-        private void btnKey2_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "2";
-            ScreenInput = ScreenInput + "2";
-        }
-
-        private void btnKey3_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "3";
-            ScreenInput = ScreenInput + "3";
-        }
-
-        private void btnKey4_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "4";
-            ScreenInput = ScreenInput + "4";
-        }
-
-        private void btnKey5_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "5";
-            ScreenInput = ScreenInput + "5";
-        }
-
-        private void btnKey6_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "6";
-            ScreenInput = ScreenInput + "6";
-        }
-
-        private void btnKey7_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "7";
-            ScreenInput = ScreenInput + "7";
-        }
-
-        private void btnKey8_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "8";
-            ScreenInput = ScreenInput + "8";
-        }
-
-        private void btnKey9_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "9";
-            ScreenInput = ScreenInput + "9";
-        }
-
-        private void btnKey0_Click(object sender, EventArgs e)
-        {
-            if (boolRisultato)
-            {
-                lblCalcScreen.Text = "";
-                boolRisultato = false;
-            }
-            lblCalcScreen.Text = lblCalcScreen.Text + "0";
-            ScreenInput = ScreenInput + "0";
-        }
-
-        private void btnKeyPiu_Click(object sender, EventArgs e)
-        {
-
-            _operazioneCorrente = EnumOperazioni.Somma;
-            Somma(firstInput, secodInput);
-            /*firstInput = ScreenInput;
-            secodInput = lblMiniScreen.Text;
-            if (secodInput == "")
-            {
-                lblMiniScreen.Text = firstInput;
-                lblCalcScreen.Text = "";
-            }
-            else
-            {
-                double risultato = Double.Parse(secodInput) + Double.Parse(firstInput);
-                lblCalcScreen.Text = risultato.ToString();
-                lblMiniScreen.Text = risultato .ToString();
-            }
-            if (lblMiniScreen.Text == "")
-            {
-                lblMiniScreen.Text = lblCalcScreen.Text;
-            }
-            lblCalcScreen.Text = "";
-            ScreenInput = "";*/
-
-        }
-
-        private void btnKeyMeno_Click(object sender, EventArgs e)
-        {
-
-            _operazioneCorrente = EnumOperazioni.Sottrazione;
-
-            firstInput = ScreenInput;
-            secodInput = lblMiniScreen.Text;
-
-            if (secodInput == "0")
-            {
-                lblMiniScreen.Text = firstInput;
-                lblCalcScreen.Text = "";
-            }
-            else
-            {
-                if (secodInput != "") 
+                var text = (sender as Button)?.Text;
+                if(lblCalcScreen.Text.Equals("0")) 
                 {
-                    double risultato = Double.Parse(secodInput) - Double.Parse(firstInput);
-                    lblCalcScreen.Text = risultato.ToString();
-                    lblMiniScreen.Text = risultato.ToString();
+                    lblCalcScreen.Text = text;
+                    ScreenInput += text;
+                }
+                else
+                {
+                    lblCalcScreen.Text = lblCalcScreen.Text + text;
+                    ScreenInput += text;
                 }
                 
             }
-            if (lblMiniScreen.Text == "")
-            {
-                lblMiniScreen.Text = lblCalcScreen.Text;
-            }
-            lblCalcScreen.Text = "";
-            ScreenInput = "";
+            // DlogResult result = MessageBox.Show((sender as Button).Text, "Provaaaaaaaaa!", MessageBoxButtons.OK);
         }
-
-        private void btnKeyPer_Click(object sender, EventArgs e)
+        private void btnKeyOperatore(object sender, EventArgs e)
         {
-
-            _operazioneCorrente = EnumOperazioni.Moltiplicazione;
-
-            firstInput = ScreenInput;
-            secodInput = lblMiniScreen.Text;
-
-            if (secodInput == "0")
+            setInput();
+            switch ((sender as Button)?.Text)
             {
-                lblMiniScreen.Text = firstInput;
-                lblCalcScreen.Text = "";
-            }
-            else
-            {
-                if (secodInput != "")
-                {
-                    double risultato = Double.Parse(secodInput) * Double.Parse(firstInput);
-                    lblCalcScreen.Text = risultato.ToString();
-                    lblMiniScreen.Text = risultato.ToString();
-                }
-
-            }
-            if (lblMiniScreen.Text == "")
-            {
-                lblMiniScreen.Text = lblCalcScreen.Text;
-            }
-            lblCalcScreen.Text = "";
-            ScreenInput = "";
-        }
-
-        private void btnKeyDiviso_Click(object sender, EventArgs e)
-        {
-
-            _operazioneCorrente = EnumOperazioni.Divisione;
-
-            firstInput = ScreenInput;
-            secodInput = lblMiniScreen.Text;
-
-            if (secodInput == "0")
-            {
-                lblMiniScreen.Text = firstInput;
-                lblCalcScreen.Text = "";
-            }
-            else
-            {
-                if (secodInput != "")
-                {
-                    double risultato = Double.Parse(secodInput) / Double.Parse(firstInput);
-                    lblCalcScreen.Text = risultato.ToString();
-                    lblMiniScreen.Text = risultato.ToString();
-                }
-
-            }
-            if (lblMiniScreen.Text == "")
-            {
-                lblMiniScreen.Text = lblCalcScreen.Text;
-            }
-            lblCalcScreen.Text = "";
-            ScreenInput = "";
+                case "+":
+                    setInput();
+                    _operazioneCorrente = EnumOperazioni.Somma;
+                    Somma(FirstInput);
+                    break;
+                case "-":
+                    setInput();
+                    _operazioneCorrente = EnumOperazioni.Sottrazione;
+                    Sottrazione(FirstInput);
+                    break;
+                case "/":
+                    setInput();
+                    _operazioneCorrente = EnumOperazioni.Divisione;
+                    Divisione(FirstInput);
+                    break;
+                case "x":
+                    setInput();
+                    _operazioneCorrente = EnumOperazioni.Moltiplicazione;
+                    Moltiplicazione(FirstInput);
+                    break;
+            }            
         }
 
         private void btnKeyEqual_Click(object sender, EventArgs e)
         {
-            
+            setInput();
             switch (_operazioneCorrente)
             {
                 case EnumOperazioni.Somma:
-                    Somma(firstInput, secodInput);
+                    Somma(FirstInput);
                     break;
                 case EnumOperazioni.Sottrazione:
+                    Sottrazione(FirstInput);
                     break;
-                case EnumOperazioni.Divisione: 
+                case EnumOperazioni.Divisione:
+                    Divisione(FirstInput);
                     break;
-                case EnumOperazioni.Moltiplicazione: 
-                    break; 
-
+                case EnumOperazioni.Moltiplicazione:
+                    Moltiplicazione(FirstInput);
+                    break;
             }
 
         }
 
         private void svuotaInput()
         {
-            lblMiniScreen.Text = "";
-            firstInput = "";
-            secodInput = "";
+            ScreenInput = "";
+            lblCalcScreen.Text = "0";
+            num1 = 0;
         }
         private void setInput()
         {
-            firstInput = lblCalcScreen.Text;
-            secodInput = lblMiniScreen.Text;
-
-            if (secodInput == "" || secodInput == "0")
+            FirstInput = lblCalcScreen.Text;
+            if(FirstInput != "")
             {
-                lblMiniScreen.Text = firstInput;
-                lblCalcScreen.Text = "";
-                secodInput = lblMiniScreen.Text;
+                num1 = Double.Parse(FirstInput);
             }
-            if (lblMiniScreen.Text == "")
+        }
+        private void Somma(string firstInput)
+        {
+            if (lblMiniScreen.Text == "0" || lblMiniScreen.Text == "")
             {
                 lblMiniScreen.Text = lblCalcScreen.Text;
+                calcolo = num1;
+                lblCalcScreen.Text = "";
             }
-            lblCalcScreen.Text = "";
-            ScreenInput = "";
-        }
-        private void Somma(string firstInput, string secodInput)
-        {
-            setInput();
-            this.firstInput = firstInput;
-            this.secodInput = secodInput;
-            if(equals(firstInput, secodInput))
+            else
             {
-                calcolo = Double.Parse(firstInput) + Double.Parse(secodInput);
+                calcolo += num1;
+                lblMiniScreen.Text = calcolo.ToString();
             }
-            lblCalcScreen.Text = calcolo.ToString();
-
+            if (lblCalcScreen.Text == "0")
+            {
+                lblMiniScreen.Text = lblMiniScreen.Text + "+" ;
+            }
             svuotaInput();
         }
 
-        private void Sottrazione(string firstInput, string secodInput)
+        private void Sottrazione(string firstInput)
         {
-            this.firstInput = firstInput;
-            this.secodInput = secodInput;
-            calcolo = Double.Parse(firstInput) - Double.Parse(secodInput);
-            lblCalcScreen.Text = calcolo.ToString();
-
+            if (lblMiniScreen.Text == "0" || lblMiniScreen.Text == "")
+            {
+                lblMiniScreen.Text = lblCalcScreen.Text;
+                calcolo = num1; 
+                lblCalcScreen.Text = "";
+            }
+            else
+            {
+                calcolo -= num1;
+                lblMiniScreen.Text = calcolo.ToString();
+                num2 = calcolo;
+            }
+            if (lblCalcScreen.Text == "0")
+            {
+                lblMiniScreen.Text = lblMiniScreen.Text+="-";
+            }
             svuotaInput();
         }
-
-        private void Divisione(string firstInput, string secodInput)
+        private void Divisione(string firstInput)
         {
-            this.firstInput = firstInput;
-            this.secodInput = secodInput;
-            calcolo = Double.Parse(firstInput) / Double.Parse(secodInput);
-            lblCalcScreen.Text = calcolo.ToString();
-
-            svuotaInput();
+            {
+                //Console.WriteLine("second" + secodInput, "first" + firstInput);
+                if (lblMiniScreen.Text == "0" || lblMiniScreen.Text == "")
+                {
+                    lblMiniScreen.Text = lblCalcScreen.Text;
+                    calcolo = num1;
+                    lblCalcScreen.Text = "";
+                }
+                else
+                {
+                    if (num1 == 0) { num1 = 1; }
+                    calcolo /= num1;
+                    lblMiniScreen.Text = calcolo.ToString();
+                }
+                if (lblCalcScreen.Text == "0")
+                {
+                    lblMiniScreen.Text = lblMiniScreen.Text + "/";
+                }
+                svuotaInput();
+            }
+        }
+        private void Moltiplicazione(string firstInput)
+        {
+            {
+                //Console.WriteLine("second" + secodInput, "first" + firstInput);
+                if (lblMiniScreen.Text == "0" || lblMiniScreen.Text == "")
+                {
+                    lblMiniScreen.Text = lblCalcScreen.Text;
+                    calcolo = num1;
+                    lblCalcScreen.Text = "";
+                }
+                else
+                {
+                    if(num1 == 0) { num1 = 1; }
+                    calcolo *= num1;
+                    lblMiniScreen.Text = calcolo.ToString();
+                }
+                if (lblCalcScreen.Text == "0")
+                {
+                    lblMiniScreen.Text = lblMiniScreen.Text + "x";
+                }
+                svuotaInput();
+            }
         }
 
-        private void Moltiplicazione(string firstInput, string secodInput)
+        private void equals(string firstInput, string secondInpur)
         {
-            this.firstInput = firstInput;
-            this.secodInput = secodInput;
-            calcolo = Double.Parse(firstInput) * Double.Parse(secodInput);
-            lblCalcScreen.Text = calcolo.ToString();
-
-            svuotaInput();
-        }
-
-        private bool equals(string firstInput, string secondInpur)
-        {
-            bool inputPieni = false;
-            if (firstInput != "" && secodInput != "0")
-                { inputPieni = true; }
-            return inputPieni;
+            switch (_operazioneCorrente)
+            {
+                case EnumOperazioni.Somma:
+                    Somma(firstInput);
+                    break;
+                case EnumOperazioni.Sottrazione:
+                    Sottrazione(firstInput);
+                    break;
+                case EnumOperazioni.Divisione:
+                    Divisione(firstInput);
+                    break;
+                case EnumOperazioni.Moltiplicazione:
+                    Moltiplicazione(firstInput);
+                    break;
+            }
         }
     }
 }
