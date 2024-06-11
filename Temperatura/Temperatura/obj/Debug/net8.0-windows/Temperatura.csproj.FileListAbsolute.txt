@@ -1,0 +1,16 @@
+C:\ProgettiLS\Temperatura\Temperatura\bin\Debug\net8.0-windows\Temperatura.exe
+C:\ProgettiLS\Temperatura\Temperatura\bin\Debug\net8.0-windows\Temperatura.deps.json
+C:\ProgettiLS\Temperatura\Temperatura\bin\Debug\net8.0-windows\Temperatura.runtimeconfig.json
+C:\ProgettiLS\Temperatura\Temperatura\bin\Debug\net8.0-windows\Temperatura.dll
+C:\ProgettiLS\Temperatura\Temperatura\bin\Debug\net8.0-windows\Temperatura.pdb
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.Form1.resources
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.csproj.GenerateResource.cache
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.AssemblyInfoInputs.cache
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.AssemblyInfo.cs
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.csproj.CoreCompileInputs.cache
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.dll
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\refint\Temperatura.dll
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.pdb
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\Temperatura.genruntimeconfig.cache
+C:\ProgettiLS\Temperatura\Temperatura\obj\Debug\net8.0-windows\ref\Temperatura.dll
