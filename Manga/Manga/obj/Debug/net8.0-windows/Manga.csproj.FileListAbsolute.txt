@@ -1,0 +1,17 @@
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.Form1.resources
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.FormDettaglio.resources
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.csproj.GenerateResource.cache
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.AssemblyInfoInputs.cache
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.AssemblyInfo.cs
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.csproj.CoreCompileInputs.cache
+C:\ProgettiLS\Manga\Manga\bin\Debug\net8.0-windows\Manga.exe
+C:\ProgettiLS\Manga\Manga\bin\Debug\net8.0-windows\Manga.deps.json
+C:\ProgettiLS\Manga\Manga\bin\Debug\net8.0-windows\Manga.runtimeconfig.json
+C:\ProgettiLS\Manga\Manga\bin\Debug\net8.0-windows\Manga.dll
+C:\ProgettiLS\Manga\Manga\bin\Debug\net8.0-windows\Manga.pdb
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.dll
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\refint\Manga.dll
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.pdb
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\Manga.genruntimeconfig.cache
+C:\ProgettiLS\Manga\Manga\obj\Debug\net8.0-windows\ref\Manga.dll
