@@ -32,14 +32,15 @@
             btnMenoCostoso = new Button();
             btnPiuCostoso = new Button();
             btnAggiungi = new Button();
-            dataGridView = new DataGridView();
-            binSourceItem = new BindingSource(components);
+            bindingSource1 = new BindingSource(components);
+            TabellaManga = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             titoloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tipoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             prezzoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             numeroPagineDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)binSourceItem).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TabellaManga).BeginInit();
             SuspendLayout();
             // 
             // btnMenoCostoso
@@ -72,23 +73,23 @@
             btnAggiungi.UseVisualStyleBackColor = true;
             btnAggiungi.Click += btnAggiungi_Click;
             // 
-            // dataGridView
+            // bindingSource1
             // 
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.AutoGenerateColumns = false;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, titoloDataGridViewTextBoxColumn, prezzoDataGridViewTextBoxColumn, numeroPagineDataGridViewTextBoxColumn });
-            dataGridView.DataSource = binSourceItem;
-            dataGridView.Location = new Point(8, 36);
-            dataGridView.Name = "dataGridView";
-            dataGridView.ReadOnly = true;
-            dataGridView.Size = new Size(443, 150);
-            dataGridView.TabIndex = 14;
+            bindingSource1.DataSource = typeof(ModelloManga);
             // 
-            // binSourceItem
+            // TabellaManga
             // 
-            binSourceItem.DataSource = typeof(ModelloManga);
+            TabellaManga.AllowUserToAddRows = false;
+            TabellaManga.AllowUserToDeleteRows = false;
+            TabellaManga.AutoGenerateColumns = false;
+            TabellaManga.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TabellaManga.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, titoloDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, prezzoDataGridViewTextBoxColumn, numeroPagineDataGridViewTextBoxColumn });
+            TabellaManga.DataSource = bindingSource1;
+            TabellaManga.Location = new Point(1, 34);
+            TabellaManga.Name = "TabellaManga";
+            TabellaManga.ReadOnly = true;
+            TabellaManga.Size = new Size(543, 150);
+            TabellaManga.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -103,6 +104,13 @@
             titoloDataGridViewTextBoxColumn.HeaderText = "Titolo";
             titoloDataGridViewTextBoxColumn.Name = "titoloDataGridViewTextBoxColumn";
             titoloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            tipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // prezzoDataGridViewTextBoxColumn
             // 
@@ -122,15 +130,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 261);
-            Controls.Add(dataGridView);
+            ClientSize = new Size(545, 261);
+            Controls.Add(TabellaManga);
             Controls.Add(btnMenoCostoso);
             Controls.Add(btnPiuCostoso);
             Controls.Add(btnAggiungi);
             Name = "Form1";
             Text = "ListaManga";
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)binSourceItem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TabellaManga).EndInit();
             ResumeLayout(false);
         }
 
@@ -139,10 +147,11 @@
         private Button btnMenoCostoso;
         private Button btnPiuCostoso;
         private Button btnAggiungi;
-        private DataGridView dataGridView;
-        private BindingSource binSourceItem;
+        private BindingSource bindingSource1;
+        private DataGridView TabellaManga;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn titoloDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prezzoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn numeroPagineDataGridViewTextBoxColumn;
     }

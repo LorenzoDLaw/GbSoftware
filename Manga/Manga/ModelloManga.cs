@@ -11,12 +11,9 @@ namespace Manga
     {
         public int Id {  get; set; }
         public string Titolo { get; set; }
-        EnumManga Tipo { get; set; }   
+        public EnumManga Tipo { get; set; }   
         public double Prezzo { get; set; }
         public int NumeroPagine { get; set; }
-
-  
-
         public ModelloManga()
         {
         }

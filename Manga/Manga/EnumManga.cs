@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Manga
 {
-    internal class EnumManga
+    public enum EnumManga
     {
-        public enum Tipo
-        {
-            shonen,
-            seinen,
-            isekai,
-            sliceflife,
-            kodomo,
-        }
+        shonen, //0
+        seinen, //1 
+        isekai, //2
+        sliceflife, //3
+        kodomo, //4
     }
 }

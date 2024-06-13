@@ -34,12 +34,13 @@
             txBoxNumPagine = new TextBox();
             txBoxPrezzo = new TextBox();
             txBoxTipo = new TextBox();
+            bindingSource1 = new BindingSource(components);
             txBoxTitolo = new TextBox();
             lblNPagine = new Label();
             lblPrezzo = new Label();
             lblTipo = new Label();
             lblTitolo = new Label();
-            bindingSource1 = new BindingSource(components);
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // 
             // txBoxNumPagine
             // 
+            txBoxNumPagine.DataBindings.Add(new Binding("Text", bindingSource1, "NumeroPagine", true));
             txBoxNumPagine.Location = new Point(229, 145);
             txBoxNumPagine.Name = "txBoxNumPagine";
             txBoxNumPagine.Size = new Size(100, 23);
@@ -72,6 +74,7 @@
             // 
             // txBoxPrezzo
             // 
+            txBoxPrezzo.DataBindings.Add(new Binding("Text", bindingSource1, "Prezzo", true));
             txBoxPrezzo.Location = new Point(229, 116);
             txBoxPrezzo.Name = "txBoxPrezzo";
             txBoxPrezzo.Size = new Size(100, 23);
@@ -79,11 +82,15 @@
             // 
             // txBoxTipo
             // 
-            txBoxTipo.DataBindings.Add(new Binding("Text", bindingSource1, "Prezzo", true));
+            txBoxTipo.DataBindings.Add(new Binding("Text", bindingSource1, "Tipo", true));
             txBoxTipo.Location = new Point(229, 83);
             txBoxTipo.Name = "txBoxTipo";
             txBoxTipo.Size = new Size(100, 23);
             txBoxTipo.TabIndex = 15;
+            // 
+            // bindingSource1
+            // 
+            bindingSource1.DataSource = typeof(ModelloManga);
             // 
             // txBoxTitolo
             // 
@@ -129,15 +136,22 @@
             lblTitolo.TabIndex = 10;
             lblTitolo.Text = "Titolo";
             // 
-            // bindingSource1
+            // button1
             // 
-            bindingSource1.DataSource = typeof(ModelloManga);
+            button1.Location = new Point(82, 79);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 20;
+            button1.Text = "elenco";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnVediTipi;
             // 
             // FormDettaglio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 261);
+            Controls.Add(button1);
             Controls.Add(btnSalva);
             Controls.Add(btnAnnulla);
             Controls.Add(txBoxNumPagine);
@@ -168,5 +182,6 @@
         private Label lblTipo;
         private Label lblTitolo;
         private BindingSource bindingSource1;
+        private Button button1;
     }
 }
