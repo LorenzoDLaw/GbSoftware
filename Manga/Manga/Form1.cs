@@ -20,45 +20,57 @@ namespace Manga
             var result = formdettaglio.ShowDialog();
             if (result == DialogResult.OK)
             {
-                bindingSource1.Add(manga);
                 mangas.Add(manga);
+                bindingSource1.Add(manga);
             }
         }
         private void btnPiuCostoso_Click(object sender, EventArgs e)
         {
-            //string titolo = "";
-            //double prezzo = 0;
-            //for (int i = 0; i < bindingSource1.Count; i++)
-            //{
-            //    //double prezzoCorrente = (double)((ModelloManga)bindingSource1.Current).Prezzo;
-            //    double prezzoCorrente = Convert.ToDouble(TabellaManga.Rows[i].Cells[3].Value);
-            //    if (prezzo < prezzoCorrente)
-            //    {
-            //        titolo = Convert.ToString(TabellaManga.Rows[i].Cells[1].Value);
-            //        prezzo = prezzoCorrente;
-            //    }
-
-            //}
             var manga = mangas.MaxBy(x => x.Prezzo);
-            MessageBox.Show($"Più costoso {manga.Titolo}","manga più costoso", MessageBoxButtons.OK);
+            MessageBox.Show($"Più costoso {manga.Titolo}", "manga più costoso", MessageBoxButtons.OK);
         }
 
         private void btnMenoCostoso_Click(object sender, EventArgs e)
         {
-            //string titolo = convert.tostring(tabellamanga.rows[0].cells[1].value);
-            //double prezzo = convert.todouble(tabellamanga.rows[0].cells[3].value);
-            //for (int i = 0; i < bindingsource1.count; i++)
-            //{
-            //    double prezzocorrente = convert.todouble(tabellamanga.rows[i].cells[3].value);
-            //    if (prezzo > prezzocorrente)
-            //    {
-            //        titolo = convert.tostring(tabellamanga.rows[i].cells[1].value);
-            //        prezzo = prezzocorrente;
-            //    }
-
-            //}
             var manga = mangas.MinBy(x => x.Prezzo);
             MessageBox.Show($"Meno costoso {manga.Titolo}", "manga meno costoso", MessageBoxButtons.OK);
+        }
+
+        private void TabellaManga_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            ModelloManga modificaManga = new ModelloManga();
+            modificaManga.Titolo = (bindingSource1.Current as ModelloManga)!.Titolo;
+            modificaManga.Tipo = (bindingSource1.Current as ModelloManga)!.Tipo;
+            modificaManga.Prezzo = (bindingSource1.Current as ModelloManga)!.Prezzo;
+            modificaManga.NumeroPagine = (bindingSource1.Current as ModelloManga)!.NumeroPagine;
+            FormDettaglio formdettaglio = new FormDettaglio(modificaManga);
+            var stato = formdettaglio.ShowDialog();
+            if (stato == DialogResult.OK)
+            {
+                mangas.Add(modificaManga);
+                mangas.Remove(bindingSource1.Current as ModelloManga);
+                bindingSource1.DataSource = mangas;
+            }
+            else if (stato == DialogResult.Yes)
+            {
+                bindingSource1.DataSource = mangas;
+            }
+
+        }
+        private void TabellaManga_KeyDown(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show($"{e.KeyData}", "caio", MessageBoxButtons.OK);
+            if (e.KeyCode.Equals(Keys.Delete))
+            {
+                DialogResult result = MessageBox.Show($"cancella", "caio", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    //MessageBox.Show($"{valIndex}", "caio", MessageBoxButtons.OK);
+                    mangas.Remove(bindingSource1.Current as ModelloManga);
+                    bindingSource1.RemoveCurrent();
+                }     
+            }
         }
     }
 }

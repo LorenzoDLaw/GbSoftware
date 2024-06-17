@@ -18,7 +18,6 @@ namespace Manga
             InitializeComponent();
             bindingSource1.DataSource = manga;
         }
-
         private void btnSalva_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -26,6 +25,7 @@ namespace Manga
         }
         private void btnAnnulla_Click(object sender, EventArgs e)
         {
+            DialogResult= DialogResult.Yes;
             Close();
         }
         private void btnVediTipi(object sender, EventArgs e)
