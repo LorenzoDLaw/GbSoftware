@@ -32,9 +32,9 @@
             btnSalva = new Button();
             btnAnnulla = new Button();
             txBoxNumPagine = new TextBox();
+            bindingSource1 = new BindingSource(components);
             txBoxPrezzo = new TextBox();
             txBoxTipo = new TextBox();
-            bindingSource1 = new BindingSource(components);
             txBoxTitolo = new TextBox();
             lblNPagine = new Label();
             lblPrezzo = new Label();
@@ -67,14 +67,22 @@
             // txBoxNumPagine
             // 
             txBoxNumPagine.DataBindings.Add(new Binding("Text", bindingSource1, "NumeroPagine", true));
+            txBoxNumPagine.DataBindings.Add(new Binding("DataContext", bindingSource1, "NumeroPagine", true));
+            txBoxNumPagine.DataBindings.Add(new Binding("Tag", bindingSource1, "NumeroPagine", true));
             txBoxNumPagine.Location = new Point(229, 145);
             txBoxNumPagine.Name = "txBoxNumPagine";
             txBoxNumPagine.Size = new Size(100, 23);
             txBoxNumPagine.TabIndex = 17;
             // 
+            // bindingSource1
+            // 
+            bindingSource1.DataSource = typeof(ModelloManga);
+            // 
             // txBoxPrezzo
             // 
             txBoxPrezzo.DataBindings.Add(new Binding("Text", bindingSource1, "Prezzo", true));
+            txBoxPrezzo.DataBindings.Add(new Binding("Tag", bindingSource1, "Prezzo", true));
+            txBoxPrezzo.DataBindings.Add(new Binding("DataContext", bindingSource1, "Prezzo", true));
             txBoxPrezzo.Location = new Point(229, 116);
             txBoxPrezzo.Name = "txBoxPrezzo";
             txBoxPrezzo.Size = new Size(100, 23);
@@ -83,18 +91,18 @@
             // txBoxTipo
             // 
             txBoxTipo.DataBindings.Add(new Binding("Text", bindingSource1, "Tipo", true));
+            txBoxTipo.DataBindings.Add(new Binding("DataContext", bindingSource1, "Tipo", true));
+            txBoxTipo.DataBindings.Add(new Binding("Tag", bindingSource1, "Tipo", true));
             txBoxTipo.Location = new Point(229, 83);
             txBoxTipo.Name = "txBoxTipo";
             txBoxTipo.Size = new Size(100, 23);
             txBoxTipo.TabIndex = 15;
             // 
-            // bindingSource1
-            // 
-            bindingSource1.DataSource = typeof(ModelloManga);
-            // 
             // txBoxTitolo
             // 
             txBoxTitolo.DataBindings.Add(new Binding("Text", bindingSource1, "Titolo", true));
+            txBoxTitolo.DataBindings.Add(new Binding("DataContext", bindingSource1, "Titolo", true));
+            txBoxTitolo.DataBindings.Add(new Binding("Tag", bindingSource1, "Titolo", true));
             txBoxTitolo.Location = new Point(229, 51);
             txBoxTitolo.Name = "txBoxTitolo";
             txBoxTitolo.Size = new Size(100, 23);

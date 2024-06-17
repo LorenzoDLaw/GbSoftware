@@ -90,6 +90,8 @@
             TabellaManga.ReadOnly = true;
             TabellaManga.Size = new Size(543, 150);
             TabellaManga.TabIndex = 14;
+            TabellaManga.CellMouseDoubleClick += TabellaManga_CellMouseDoubleClick;
+            TabellaManga.KeyDown += TabellaManga_KeyDown;
             // 
             // idDataGridViewTextBoxColumn
             // 
