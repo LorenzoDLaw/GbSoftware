@@ -8,10 +8,10 @@ namespace Manga
 {
     public enum EnumManga
     {
-        shonen, //0
-        seinen, //1 
-        isekai, //2
-        sliceflife, //3
-        kodomo, //4
+        shonen = 0, //0
+        seinen = 1, //1 
+        isekai = 2, //2
+        sliceoflife = 3, //3
+        kodomo = 4, //4
     }
 }
