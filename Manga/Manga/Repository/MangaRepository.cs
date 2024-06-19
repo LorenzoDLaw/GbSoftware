@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Manga.Repository
 {
@@ -33,56 +34,44 @@ namespace Manga.Repository
             }
             return mangaList;
         }
-        //executenonquery
-        public Manga? GetById(string id)
-        {
-            Manga manga = null;
-            string query = "SELECT * FROM Manga WHERE id = @id";
-            SqlParameter paramId = new SqlParameter("@id", id);
-            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
-            commnad.Parameters.Add(paramId);
-            commnad.CommandText = query;
-            SqlDataReader reader = commnad.ExecuteReader();
-            while (reader.Read())
-            {
-                manga = new Manga()
-                {
-                    Id = reader.GetInt32(0),
-                    Titolo = reader.GetString(1),
-                    Tipo = (EnumManga)reader.GetInt32(2),
-                    Prezzo = reader.GetDouble(3),
-                    NumeroPagine = reader.GetInt32(4),
-                };
-            }
-            return manga;
-        }
+
 
         public void NewManga(Manga manga)
         {
-            string queryNewManga = "INSERT INTO Manga(Titolo, tipo, Prezzo, NumPagine) VALUES  (@Titolo, @Tipo, @Prezzo, @NumeroPagine)";
-            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
-            commnad.CommandText = queryNewManga;
-            commnad.Parameters.AddWithValue("@Titolo", manga.Titolo);
-            commnad.Parameters.AddWithValue("@Tipo", (int)manga.Tipo);
-            commnad.Parameters.AddWithValue("@Prezzo", manga.Prezzo);
-            commnad.Parameters.AddWithValue("@NumeroPagine", manga.NumeroPagine);
+            string queryNewManga = "INSERT INTO Manga(Titolo, tipo, Prezzo, NumPagine, IdPersona) VALUES  (@Titolo, @Tipo, @Prezzo, @NumeroPagine, @IdPersona)";
+            PersoneRepository personeRepository = new PersoneRepository();
+            personeRepository.GetAll();
+            SqlCommand command = Dao.INSTACE.Connection.CreateCommand();
+            command.CommandText = queryNewManga;
+            command.Parameters.AddWithValue("@Titolo", manga.Titolo);
+            command.Parameters.AddWithValue("@Tipo", manga.Tipo);
+            command.Parameters.AddWithValue("@Prezzo", manga.Prezzo);
+            command.Parameters.AddWithValue("@NumeroPagine", manga.NumeroPagine);
+            command.Parameters.AddWithValue("@IdPersona", );
 
-            commnad.ExecuteNonQuery();
+            command.ExecuteNonQuery();
         }
+
+
+
 
         public void UpdateManga(Manga manga)
         {
-            string queryUpdate = "UPDATE Manga SET Titolo = @Titolo, Tipo = @Tipo, Prezzo = @Prezzo, NumPagine = @NumeroPagine WHERE Id = @Id";
-            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
-            commnad.CommandText = queryUpdate;
-            commnad.Parameters.AddWithValue("@Id", manga.Id);
-            commnad.Parameters.AddWithValue("@Titolo", manga.Titolo);
-            commnad.Parameters.AddWithValue("@Tipo", (int)manga.Tipo);
-            commnad.Parameters.AddWithValue("@Prezzo", manga.Prezzo);
-            commnad.Parameters.AddWithValue("@NumeroPagine", manga.NumeroPagine);
+            string queryUpdate = "UPDATE Manga SET Titolo= @Titolo, Tipo = @Tipo, Prezzo = @Prezzo, NumPagine= @NumeroPagine WHERE Id = @Id";
+            SqlCommand command = Dao.INSTACE.Connection.CreateCommand();
+            command.CommandText = queryUpdate;
+            //command.Parameters.AddWithValue("@Id", manga.Id);
+            command.Parameters.AddWithValue("@Titolo", manga.Titolo);
+            command.Parameters.AddWithValue("@Tipo", (int)manga.Tipo);
+            command.Parameters.AddWithValue("@Prezzo", manga.Prezzo);
+            command.Parameters.AddWithValue("@NumeroPagine", manga.NumeroPagine);
 
-            commnad.ExecuteNonQuery();
+            command.ExecuteNonQuery();
         }
+        
+        
+        
+        
         public void DeleteManga(int id)
         {
             string queryDelete = "DELETE FROM Manga WHERE Id = @Id";

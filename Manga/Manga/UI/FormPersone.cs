@@ -36,7 +36,9 @@ namespace Manga.UI
 
         private void btnAnnulla_Click(object sender, EventArgs e)
         {
+            Form1 form = new Form1();
             DialogResult = DialogResult.Abort;
+            form.Show();
             Close();
         }
 
@@ -72,6 +74,11 @@ namespace Manga.UI
                     bindingSource2.DataSource = _personeRepository.GetAll();
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

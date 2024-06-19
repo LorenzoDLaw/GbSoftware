@@ -40,8 +40,11 @@
             btnPiuCostoso = new Button();
             btnMenoCostoso = new Button();
             btnPassToPersona = new Button();
+            comboBox1 = new ComboBox();
+            personeBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TabellaManga).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personeBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnAggiungi
@@ -67,10 +70,10 @@
             TabellaManga.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, titoloDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, prezzoDataGridViewTextBoxColumn, numeroPagineDataGridViewTextBoxColumn });
             TabellaManga.DataSource = bindingSource1;
             TabellaManga.GridColor = SystemColors.MenuHighlight;
-            TabellaManga.Location = new Point(1, 34);
+            TabellaManga.Location = new Point(11, 32);
             TabellaManga.Name = "TabellaManga";
             TabellaManga.ReadOnly = true;
-            TabellaManga.Size = new Size(543, 150);
+            TabellaManga.Size = new Size(508, 150);
             TabellaManga.TabIndex = 14;
             TabellaManga.CellMouseDoubleClick += TabellaManga_CellMouseDoubleClick;
             TabellaManga.KeyDown += TabellaManga_KeyDown;
@@ -78,9 +81,11 @@
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.FillWeight = 50F;
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 50;
             // 
             // titoloDataGridViewTextBoxColumn
             // 
@@ -99,9 +104,11 @@
             // prezzoDataGridViewTextBoxColumn
             // 
             prezzoDataGridViewTextBoxColumn.DataPropertyName = "Prezzo";
+            prezzoDataGridViewTextBoxColumn.FillWeight = 95F;
             prezzoDataGridViewTextBoxColumn.HeaderText = "Prezzo";
             prezzoDataGridViewTextBoxColumn.Name = "prezzoDataGridViewTextBoxColumn";
             prezzoDataGridViewTextBoxColumn.ReadOnly = true;
+            prezzoDataGridViewTextBoxColumn.Width = 95;
             // 
             // numeroPagineDataGridViewTextBoxColumn
             // 
@@ -140,11 +147,28 @@
             btnPassToPersona.UseVisualStyleBackColor = true;
             btnPassToPersona.Click += btnPassToPersona_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.DataSource = personeBindingSource;
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(542, 32);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(148, 23);
+            comboBox1.TabIndex = 18;
+            comboBox1.ValueMember = "Nome";
+            comboBox1.DropDown += ComboBox1_AbbinaPersona;
+            // 
+            // personeBindingSource
+            // 
+            personeBindingSource.DataSource = typeof(Persone);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(545, 261);
+            ClientSize = new Size(714, 261);
+            Controls.Add(comboBox1);
             Controls.Add(btnPassToPersona);
             Controls.Add(btnMenoCostoso);
             Controls.Add(btnPiuCostoso);
@@ -154,6 +178,7 @@
             Text = "ListaManga";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)TabellaManga).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personeBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -161,13 +186,15 @@
         private Button btnAggiungi;
         private BindingSource bindingSource1;
         private DataGridView TabellaManga;
+        private Button btnPiuCostoso;
+        private Button btnMenoCostoso;
+        private Button btnPassToPersona;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn titoloDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prezzoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn numeroPagineDataGridViewTextBoxColumn;
-        private Button btnPiuCostoso;
-        private Button btnMenoCostoso;
-        private Button btnPassToPersona;
+        private ComboBox comboBox1;
+        private BindingSource personeBindingSource;
     }
 }

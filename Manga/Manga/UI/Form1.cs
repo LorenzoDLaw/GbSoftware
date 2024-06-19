@@ -20,8 +20,10 @@ namespace Manga
 
         private void btnAggiungi_Click(object sender, EventArgs e)
         {
+            PersoneRepository repoPersona = new PersoneRepository();
             Manga manga = new Manga(); //istanzio il modello manga
             FormDettaglio formdettaglio = new FormDettaglio(manga); //vado a richiamare formDettaglio dandogli manga come parametro
+            
             var result = formdettaglio.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -43,6 +45,7 @@ namespace Manga
             }
         }
 
+
         private void btnMenoCostoso_Click(object sender, EventArgs e)
         {
             List<Manga> mangas = new List<Manga>(_mangaRepository.GetAll());
@@ -56,6 +59,7 @@ namespace Manga
                 MessageBox.Show("iserire manga alla lista", "attenzione", MessageBoxButtons.OK);
             }
         }
+
 
         private void TabellaManga_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -72,6 +76,8 @@ namespace Manga
             }
 
         }
+
+
         private void TabellaManga_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.Equals(Keys.Delete))
@@ -87,11 +93,20 @@ namespace Manga
             }
         }
 
+
         private void btnPassToPersona_Click(object sender, EventArgs e)
         {
             Persone persone = new Persone();
             FormPersone formPersone = new FormPersone(persone);
             formPersone.Show();
+            Hide();
+        }
+
+
+        private void ComboBox1_AbbinaPersona(object sender, EventArgs e)
+        {
+            PersoneRepository _personeRepository = new PersoneRepository();
+            personeBindingSource.DataSource = _personeRepository.GetByNome();
         }
     }
 }

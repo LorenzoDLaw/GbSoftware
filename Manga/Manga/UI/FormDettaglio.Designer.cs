@@ -34,14 +34,18 @@
             txBoxNumPagine = new TextBox();
             bindingSource1 = new BindingSource(components);
             txBoxPrezzo = new TextBox();
-            txBoxTipo = new TextBox();
             txBoxTitolo = new TextBox();
             lblNPagine = new Label();
             lblPrezzo = new Label();
             lblTipo = new Label();
             lblTitolo = new Label();
             button1 = new Button();
+            comboBox1 = new ComboBox();
+            personeBindingSource = new BindingSource(components);
+            comBoxTipo = new ComboBox();
+            lblProprietario = new Label();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personeBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnSalva
@@ -71,7 +75,7 @@
             txBoxNumPagine.DataBindings.Add(new Binding("Tag", bindingSource1, "NumeroPagine", true));
             txBoxNumPagine.Location = new Point(229, 145);
             txBoxNumPagine.Name = "txBoxNumPagine";
-            txBoxNumPagine.Size = new Size(100, 23);
+            txBoxNumPagine.Size = new Size(120, 23);
             txBoxNumPagine.TabIndex = 17;
             // 
             // bindingSource1
@@ -85,18 +89,8 @@
             txBoxPrezzo.DataBindings.Add(new Binding("DataContext", bindingSource1, "Prezzo", true));
             txBoxPrezzo.Location = new Point(229, 116);
             txBoxPrezzo.Name = "txBoxPrezzo";
-            txBoxPrezzo.Size = new Size(100, 23);
+            txBoxPrezzo.Size = new Size(120, 23);
             txBoxPrezzo.TabIndex = 16;
-            // 
-            // txBoxTipo
-            // 
-            txBoxTipo.DataBindings.Add(new Binding("Text", bindingSource1, "Tipo", true));
-            txBoxTipo.DataBindings.Add(new Binding("DataContext", bindingSource1, "Tipo", true));
-            txBoxTipo.DataBindings.Add(new Binding("Tag", bindingSource1, "Tipo", true));
-            txBoxTipo.Location = new Point(229, 83);
-            txBoxTipo.Name = "txBoxTipo";
-            txBoxTipo.Size = new Size(100, 23);
-            txBoxTipo.TabIndex = 15;
             // 
             // txBoxTitolo
             // 
@@ -105,13 +99,13 @@
             txBoxTitolo.DataBindings.Add(new Binding("Tag", bindingSource1, "Titolo", true));
             txBoxTitolo.Location = new Point(229, 51);
             txBoxTitolo.Name = "txBoxTitolo";
-            txBoxTitolo.Size = new Size(100, 23);
+            txBoxTitolo.Size = new Size(120, 23);
             txBoxTitolo.TabIndex = 14;
             // 
             // lblNPagine
             // 
             lblNPagine.AutoSize = true;
-            lblNPagine.Location = new Point(163, 148);
+            lblNPagine.Location = new Point(153, 148);
             lblNPagine.Name = "lblNPagine";
             lblNPagine.Size = new Size(58, 15);
             lblNPagine.TabIndex = 13;
@@ -120,7 +114,7 @@
             // lblPrezzo
             // 
             lblPrezzo.AutoSize = true;
-            lblPrezzo.Location = new Point(163, 118);
+            lblPrezzo.Location = new Point(153, 118);
             lblPrezzo.Name = "lblPrezzo";
             lblPrezzo.Size = new Size(41, 15);
             lblPrezzo.TabIndex = 12;
@@ -129,7 +123,7 @@
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(163, 87);
+            lblTipo.Location = new Point(153, 87);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(30, 15);
             lblTipo.TabIndex = 11;
@@ -138,7 +132,7 @@
             // lblTitolo
             // 
             lblTitolo.AutoSize = true;
-            lblTitolo.Location = new Point(163, 54);
+            lblTitolo.Location = new Point(153, 54);
             lblTitolo.Name = "lblTitolo";
             lblTitolo.Size = new Size(37, 15);
             lblTitolo.TabIndex = 10;
@@ -154,17 +148,61 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnVediTipi;
             // 
+            // comboBox1
+            // 
+            comboBox1.DataSource = personeBindingSource;
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(228, 22);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 21;
+            comboBox1.ValueMember = "Id";
+            comboBox1.DropDown += ComboBox1_AbbinaPersona;
+            // 
+            // personeBindingSource
+            // 
+            personeBindingSource.DataSource = typeof(Persone);
+            // 
+            // comBoxTipo
+            // 
+            comBoxTipo.DataBindings.Add(new Binding("DataContext", bindingSource1, "Tipo", true));
+            comBoxTipo.DataBindings.Add(new Binding("SelectedItem", bindingSource1, "Tipo", true));
+            comBoxTipo.DataBindings.Add(new Binding("SelectedValue", bindingSource1, "Tipo", true));
+            comBoxTipo.DataBindings.Add(new Binding("Tag", bindingSource1, "Tipo", true));
+            comBoxTipo.DataBindings.Add(new Binding("Text", bindingSource1, "Tipo", true));
+            comBoxTipo.DataSource = bindingSource1;
+            comBoxTipo.DisplayMember = "Tipo";
+            comBoxTipo.FormattingEnabled = true;
+            comBoxTipo.Location = new Point(229, 84);
+            comBoxTipo.Name = "comBoxTipo";
+            comBoxTipo.Size = new Size(121, 23);
+            comBoxTipo.TabIndex = 22;
+            comBoxTipo.ValueMember = "Tipo";
+            comBoxTipo.DropDown += btnVediTipi;
+            // 
+            // lblProprietario
+            // 
+            lblProprietario.AutoSize = true;
+            lblProprietario.Location = new Point(153, 25);
+            lblProprietario.Name = "lblProprietario";
+            lblProprietario.Size = new Size(69, 15);
+            lblProprietario.TabIndex = 23;
+            lblProprietario.Text = "Proprietario";
+            // 
             // FormDettaglio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 261);
+            Controls.Add(lblProprietario);
+            Controls.Add(comBoxTipo);
+            Controls.Add(comboBox1);
             Controls.Add(button1);
             Controls.Add(btnSalva);
             Controls.Add(btnAnnulla);
             Controls.Add(txBoxNumPagine);
             Controls.Add(txBoxPrezzo);
-            Controls.Add(txBoxTipo);
             Controls.Add(txBoxTitolo);
             Controls.Add(lblNPagine);
             Controls.Add(lblPrezzo);
@@ -173,6 +211,7 @@
             Name = "FormDettaglio";
             Text = "FormDettaglio";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personeBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,7 +222,6 @@
         private Button btnAnnulla;
         private TextBox txBoxNumPagine;
         private TextBox txBoxPrezzo;
-        private TextBox txBoxTipo;
         private TextBox txBoxTitolo;
         private Label lblNPagine;
         private Label lblPrezzo;
@@ -191,5 +229,9 @@
         private Label lblTitolo;
         private BindingSource bindingSource1;
         private Button button1;
+        private ComboBox comboBox1;
+        private BindingSource personeBindingSource;
+        private ComboBox comBoxTipo;
+        private Label lblProprietario;
     }
 }

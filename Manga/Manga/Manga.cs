@@ -14,6 +14,7 @@ namespace Manga
         public EnumManga Tipo { get; set; }
         public double Prezzo { get; set; }
         public int NumeroPagine { get; set; }
+        public int IdPersona { get; set; }
         public Manga()
         {
         }

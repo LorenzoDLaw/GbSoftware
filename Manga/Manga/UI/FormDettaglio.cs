@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manga.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Manga.EnumManga;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Manga
 {
@@ -30,7 +32,12 @@ namespace Manga
         }
         private void btnVediTipi(object sender, EventArgs e)
         {
-            MessageBox.Show("0 shonen, 1 seinen, 2 isekai, 3 Slice of Life, 4 Kodomo", "Generi", MessageBoxButtons.OK);
+            comBoxTipo.DataSource = Enum.GetValues(typeof(EnumManga));
+        }
+        private void ComboBox1_AbbinaPersona(object sender, EventArgs e)
+        {
+            PersoneRepository _personeRepository = new PersoneRepository();
+            personeBindingSource.DataSource = _personeRepository.GetByNome();
         }
     }
 }

@@ -33,7 +33,58 @@ namespace Manga.Repository
             }
             return peopleList;
         }
-        //executenonquery
+
+
+        public List<Persone> GetByNome()
+        {
+            List<Persone> persona = new List<Persone>();
+
+            string query = "SELECT DISTINCT id, Nome FROM Persona";
+            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
+            commnad.CommandText = query;
+            SqlDataReader reader;
+            using (reader = commnad.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    persona.Add(new Persone()
+                    {
+                        Id= reader.GetInt32(0),
+                        Nome = reader.GetString(1),
+                    });
+                }
+            }
+            return persona;
+        }
+
+
+        public int GetIdByNome(string nome)
+        {
+            Persone persona = null;
+            string query = "SELECT * FROM Persona WHERE Nome = @Nome";
+            SqlParameter paramId = new SqlParameter("@Nome", nome);
+            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
+            commnad.Parameters.Add(paramId);
+            commnad.CommandText = query;
+            SqlDataReader reader = commnad.ExecuteReader();
+            while (reader.Read())
+            {
+                persona = new Persone()
+                {
+                    Id = reader.GetInt32(0),
+                    Nome = reader.GetString(1),
+                    Cognome = reader.GetString(2),
+                    Citta = reader.GetString(3),
+                    Anno = reader.GetInt32(4),
+                };
+            }
+            int id = persona.Id;
+            return id;
+        }
+
+
+
+
         public Persone? GetById(string id)
         {
             Persone persona = null;
@@ -56,6 +107,9 @@ namespace Manga.Repository
             }
             return persona;
         }
+
+
+
         public void NewPersona(Persone persona)
         {
             string queryNewManga = "INSERT INTO Persona(Nome, Cognome, Citta, Anno) VALUES  (@Nome, @Cognome, @Citta, @Anno)";

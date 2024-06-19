@@ -65,12 +65,10 @@
             // 
             // txBoxNumPagine
             // 
-            txBoxNumPagine.DataBindings.Add(new Binding("DataContext", bindingSource2, "Anno", true));
-            txBoxNumPagine.DataBindings.Add(new Binding("Tag", bindingSource2, "Anno", true));
             txBoxNumPagine.DataBindings.Add(new Binding("Text", bindingSource2, "Anno", true));
             txBoxNumPagine.Location = new Point(251, 148);
             txBoxNumPagine.Name = "txBoxNumPagine";
-            txBoxNumPagine.Size = new Size(100, 23);
+            txBoxNumPagine.Size = new Size(120, 23);
             txBoxNumPagine.TabIndex = 28;
             // 
             // bindingSource2
@@ -84,7 +82,7 @@
             txBoxPrezzo.DataBindings.Add(new Binding("DataContext", bindingSource2, "Citta", true));
             txBoxPrezzo.Location = new Point(251, 119);
             txBoxPrezzo.Name = "txBoxPrezzo";
-            txBoxPrezzo.Size = new Size(100, 23);
+            txBoxPrezzo.Size = new Size(120, 23);
             txBoxPrezzo.TabIndex = 27;
             // 
             // txBoxTipo
@@ -94,7 +92,7 @@
             txBoxTipo.DataBindings.Add(new Binding("Tag", bindingSource2, "Cognome", true));
             txBoxTipo.Location = new Point(251, 86);
             txBoxTipo.Name = "txBoxTipo";
-            txBoxTipo.Size = new Size(100, 23);
+            txBoxTipo.Size = new Size(120, 23);
             txBoxTipo.TabIndex = 26;
             // 
             // txBoxTitolo
@@ -104,7 +102,7 @@
             txBoxTitolo.DataBindings.Add(new Binding("DataContext", bindingSource2, "Nome", true));
             txBoxTitolo.Location = new Point(251, 54);
             txBoxTitolo.Name = "txBoxTitolo";
-            txBoxTitolo.Size = new Size(100, 23);
+            txBoxTitolo.Size = new Size(120, 23);
             txBoxTitolo.TabIndex = 25;
             // 
             // lblNPagine
