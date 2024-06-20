@@ -39,7 +39,6 @@
             lblPrezzo = new Label();
             lblTipo = new Label();
             lblTitolo = new Label();
-            button1 = new Button();
             comboBox1 = new ComboBox();
             personeBindingSource = new BindingSource(components);
             comBoxTipo = new ComboBox();
@@ -50,9 +49,9 @@
             // 
             // btnSalva
             // 
-            btnSalva.Location = new Point(254, 185);
+            btnSalva.Location = new Point(259, 185);
             btnSalva.Name = "btnSalva";
-            btnSalva.Size = new Size(75, 23);
+            btnSalva.Size = new Size(90, 23);
             btnSalva.TabIndex = 19;
             btnSalva.Text = "Salva";
             btnSalva.UseVisualStyleBackColor = true;
@@ -60,9 +59,9 @@
             // 
             // btnAnnulla
             // 
-            btnAnnulla.Location = new Point(163, 185);
+            btnAnnulla.Location = new Point(153, 185);
             btnAnnulla.Name = "btnAnnulla";
-            btnAnnulla.Size = new Size(75, 23);
+            btnAnnulla.Size = new Size(90, 23);
             btnAnnulla.TabIndex = 18;
             btnAnnulla.Text = "Annulla";
             btnAnnulla.UseVisualStyleBackColor = true;
@@ -138,18 +137,9 @@
             lblTitolo.TabIndex = 10;
             lblTitolo.Text = "Titolo";
             // 
-            // button1
-            // 
-            button1.Location = new Point(72, 83);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 20;
-            button1.Text = "elenco";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += btnVediTipi;
-            // 
             // comboBox1
             // 
+            comboBox1.DataBindings.Add(new Binding("SelectedValue", bindingSource1, "IdPersona", true));
             comboBox1.DataSource = personeBindingSource;
             comboBox1.DisplayMember = "Nome";
             comboBox1.FormattingEnabled = true;
@@ -158,7 +148,6 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 21;
             comboBox1.ValueMember = "Id";
-            comboBox1.DropDown += ComboBox1_AbbinaPersona;
             // 
             // personeBindingSource
             // 
@@ -172,13 +161,13 @@
             comBoxTipo.DataBindings.Add(new Binding("Tag", bindingSource1, "Tipo", true));
             comBoxTipo.DataBindings.Add(new Binding("Text", bindingSource1, "Tipo", true));
             comBoxTipo.DataSource = bindingSource1;
-            comBoxTipo.DisplayMember = "Tipo";
+            comBoxTipo.DisplayMember = "Id";
             comBoxTipo.FormattingEnabled = true;
             comBoxTipo.Location = new Point(229, 84);
             comBoxTipo.Name = "comBoxTipo";
             comBoxTipo.Size = new Size(121, 23);
             comBoxTipo.TabIndex = 22;
-            comBoxTipo.ValueMember = "Tipo";
+            comBoxTipo.ValueMember = "Id";
             comBoxTipo.DropDown += btnVediTipi;
             // 
             // lblProprietario
@@ -198,7 +187,6 @@
             Controls.Add(lblProprietario);
             Controls.Add(comBoxTipo);
             Controls.Add(comboBox1);
-            Controls.Add(button1);
             Controls.Add(btnSalva);
             Controls.Add(btnAnnulla);
             Controls.Add(txBoxNumPagine);
@@ -228,7 +216,6 @@
         private Label lblTipo;
         private Label lblTitolo;
         private BindingSource bindingSource1;
-        private Button button1;
         private ComboBox comboBox1;
         private BindingSource personeBindingSource;
         private ComboBox comBoxTipo;

@@ -40,7 +40,6 @@
             btnPiuCostoso = new Button();
             btnMenoCostoso = new Button();
             btnPassToPersona = new Button();
-            comboBox1 = new ComboBox();
             personeBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TabellaManga).BeginInit();
@@ -147,18 +146,6 @@
             btnPassToPersona.UseVisualStyleBackColor = true;
             btnPassToPersona.Click += btnPassToPersona_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.DataSource = personeBindingSource;
-            comboBox1.DisplayMember = "Nome";
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(542, 32);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(148, 23);
-            comboBox1.TabIndex = 18;
-            comboBox1.ValueMember = "Nome";
-            comboBox1.DropDown += ComboBox1_AbbinaPersona;
-            // 
             // personeBindingSource
             // 
             personeBindingSource.DataSource = typeof(Persone);
@@ -167,8 +154,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(714, 261);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(550, 261);
             Controls.Add(btnPassToPersona);
             Controls.Add(btnMenoCostoso);
             Controls.Add(btnPiuCostoso);
@@ -194,7 +180,6 @@
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prezzoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn numeroPagineDataGridViewTextBoxColumn;
-        private ComboBox comboBox1;
         private BindingSource personeBindingSource;
     }
 }

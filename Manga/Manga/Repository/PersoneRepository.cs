@@ -40,10 +40,10 @@ namespace Manga.Repository
             List<Persone> persona = new List<Persone>();
 
             string query = "SELECT DISTINCT id, Nome FROM Persona";
-            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
-            commnad.CommandText = query;
+            SqlCommand command = Dao.INSTACE.Connection.CreateCommand();
+            command.CommandText = query;
             SqlDataReader reader;
-            using (reader = commnad.ExecuteReader())
+            using (reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
@@ -53,57 +53,6 @@ namespace Manga.Repository
                         Nome = reader.GetString(1),
                     });
                 }
-            }
-            return persona;
-        }
-
-
-        public int GetIdByNome(string nome)
-        {
-            Persone persona = null;
-            string query = "SELECT * FROM Persona WHERE Nome = @Nome";
-            SqlParameter paramId = new SqlParameter("@Nome", nome);
-            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
-            commnad.Parameters.Add(paramId);
-            commnad.CommandText = query;
-            SqlDataReader reader = commnad.ExecuteReader();
-            while (reader.Read())
-            {
-                persona = new Persone()
-                {
-                    Id = reader.GetInt32(0),
-                    Nome = reader.GetString(1),
-                    Cognome = reader.GetString(2),
-                    Citta = reader.GetString(3),
-                    Anno = reader.GetInt32(4),
-                };
-            }
-            int id = persona.Id;
-            return id;
-        }
-
-
-
-
-        public Persone? GetById(string id)
-        {
-            Persone persona = null;
-            string query = "SELECT * FROM Persona WHERE id = @id";
-            SqlParameter paramId = new SqlParameter("@id", id);
-            SqlCommand commnad = Dao.INSTACE.Connection.CreateCommand();
-            commnad.Parameters.Add(paramId);
-            commnad.CommandText = query;
-            SqlDataReader reader = commnad.ExecuteReader();
-            while (reader.Read())
-            {
-                persona = new Persone()
-                {
-                    Id = reader.GetInt32(0),
-                    Nome = reader.GetString(1),
-                    Cognome = reader.GetString(2),
-                    Citta= reader.GetString(3),
-                    Anno= reader.GetInt32(4),
-                };
             }
             return persona;
         }

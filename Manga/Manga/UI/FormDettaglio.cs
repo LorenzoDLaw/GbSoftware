@@ -19,6 +19,8 @@ namespace Manga
         {
             InitializeComponent();
             bindingSource1.DataSource = manga;
+            PersoneRepository _personeRepository = new PersoneRepository();
+            personeBindingSource.DataSource = _personeRepository.GetByNome();
         }
         private void btnSalva_Click(object sender, EventArgs e)
         {
@@ -33,11 +35,6 @@ namespace Manga
         private void btnVediTipi(object sender, EventArgs e)
         {
             comBoxTipo.DataSource = Enum.GetValues(typeof(EnumManga));
-        }
-        private void ComboBox1_AbbinaPersona(object sender, EventArgs e)
-        {
-            PersoneRepository _personeRepository = new PersoneRepository();
-            personeBindingSource.DataSource = _personeRepository.GetByNome();
         }
     }
 }

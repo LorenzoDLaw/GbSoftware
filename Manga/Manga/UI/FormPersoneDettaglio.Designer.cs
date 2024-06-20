@@ -45,9 +45,9 @@
             // 
             // btnSalva
             // 
-            btnSalva.Location = new Point(276, 188);
+            btnSalva.Location = new Point(286, 188);
             btnSalva.Name = "btnSalva";
-            btnSalva.Size = new Size(75, 23);
+            btnSalva.Size = new Size(90, 23);
             btnSalva.TabIndex = 30;
             btnSalva.Text = "Salva";
             btnSalva.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             // 
             btnAnnulla.Location = new Point(185, 188);
             btnAnnulla.Name = "btnAnnulla";
-            btnAnnulla.Size = new Size(75, 23);
+            btnAnnulla.Size = new Size(90, 23);
             btnAnnulla.TabIndex = 29;
             btnAnnulla.Text = "Annulla";
             btnAnnulla.UseVisualStyleBackColor = true;

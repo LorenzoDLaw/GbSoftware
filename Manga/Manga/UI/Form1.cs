@@ -20,7 +20,6 @@ namespace Manga
 
         private void btnAggiungi_Click(object sender, EventArgs e)
         {
-            PersoneRepository repoPersona = new PersoneRepository();
             Manga manga = new Manga(); //istanzio il modello manga
             FormDettaglio formdettaglio = new FormDettaglio(manga); //vado a richiamare formDettaglio dandogli manga come parametro
             
@@ -68,7 +67,7 @@ namespace Manga
             var stato = formdettaglio.ShowDialog();
             if (stato == DialogResult.OK)
             {
-                _mangaRepository.UpdateManga(bindingSource1.Current as Manga);
+                _mangaRepository.UpdateManga(bindingSource1.Current as Manga); //mi permette di richiamare il metodo sulla row selezionata
             }
             else if (stato == DialogResult.Abort)
             {
@@ -100,13 +99,6 @@ namespace Manga
             FormPersone formPersone = new FormPersone(persone);
             formPersone.Show();
             Hide();
-        }
-
-
-        private void ComboBox1_AbbinaPersona(object sender, EventArgs e)
-        {
-            PersoneRepository _personeRepository = new PersoneRepository();
-            personeBindingSource.DataSource = _personeRepository.GetByNome();
         }
     }
 }

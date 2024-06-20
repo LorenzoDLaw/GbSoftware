@@ -38,8 +38,8 @@
             bindingSource2 = new BindingSource(components);
             btnAggiungi = new Button();
             btnRitorno = new Button();
-            comboBox1 = new ComboBox();
             mangaBindingSource = new BindingSource(components);
+            listBox1 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mangaBindingSource).BeginInit();
@@ -58,6 +58,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(511, 150);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             dataGridView1.CellMouseDoubleClick += TabellaManga_CellMouseDoubleClick;
             dataGridView1.KeyDown += TabellaManga_KeyDown;
             // 
@@ -122,32 +123,28 @@
             btnRitorno.UseVisualStyleBackColor = true;
             btnRitorno.Click += btnAnnulla_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.DataBindings.Add(new Binding("Text", mangaBindingSource, "Titolo", true));
-            comboBox1.DataBindings.Add(new Binding("SelectedValue", mangaBindingSource, "Titolo", true));
-            comboBox1.DataBindings.Add(new Binding("SelectedItem", mangaBindingSource, "Titolo", true));
-            comboBox1.DataBindings.Add(new Binding("DataContext", mangaBindingSource, "Titolo", true));
-            comboBox1.DataBindings.Add(new Binding("Tag", mangaBindingSource, "Titolo", true));
-            comboBox1.DataSource = mangaBindingSource;
-            comboBox1.DisplayMember = "Titolo";
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(542, 26);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(150, 23);
-            comboBox1.TabIndex = 16;
-            comboBox1.DropDown += comboBox1_SelectedIndexChanged;
-            // 
             // mangaBindingSource
             // 
             mangaBindingSource.DataSource = typeof(Manga);
+            // 
+            // listBox1
+            // 
+            listBox1.DataSource = mangaBindingSource;
+            listBox1.DisplayMember = "Titolo";
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(538, 26);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(164, 154);
+            listBox1.TabIndex = 18;
+            listBox1.ValueMember = "Titolo";
             // 
             // FormPersone
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(714, 261);
-            Controls.Add(comboBox1);
+            Controls.Add(listBox1);
             Controls.Add(btnRitorno);
             Controls.Add(btnAggiungi);
             Controls.Add(dataGridView1);
@@ -170,7 +167,7 @@
         private DataGridViewTextBoxColumn cittaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn annoDataGridViewTextBoxColumn;
         private Button btnRitorno;
-        private ComboBox comboBox1;
         private BindingSource mangaBindingSource;
+        private ListBox listBox1;
     }
 }
